@@ -1,0 +1,7 @@
+<div class="list">
+  <ul class="heroList">
+    <li class="heroList__hero card" *ngFor="let hero of responseList">
+      <app-hero [hero]="hero" isMain="true"></app-hero>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,25 @@
+.heroList__hero {
+
+  &-avatar {
+    width: 100px;
+    height: 100px;
+  }
+
+  &-btn {
+    position: absolute;
+    right: 10px;
+    top:30px
+  }
+
+  &-view {
+    position: absolute;
+    right: 10px;
+    bottom: 20px;
+  }
+
+  &-stats {
+    position: absolute;
+    left: 200px;
+    top: 20px;
+  }
+}

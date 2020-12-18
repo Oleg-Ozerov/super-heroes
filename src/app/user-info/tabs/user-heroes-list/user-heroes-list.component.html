@@ -1,0 +1,7 @@
+<ul class="container">
+  <li class="card" *ngFor="let hero of storageService.selectedHeroesList" >
+    <app-hero [hero]="hero"></app-hero>
+  </li>
+  <button [routerLink]="['/hero-selection']" class="btn">+</button>
+</ul>
+

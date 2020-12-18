@@ -1,0 +1,8 @@
+<div class="container">
+  <div class="card" *ngFor="let powerup of powerupsService.powerupList">
+    <img class="powerup__img" src="{{powerup.imageUrl}}">
+    <h3>{{powerup.title}}</h3>
+    <p>{{powerup.descriprion}}</p>
+    <p>uses: {{powerup.usesLeft}}</p>
+  </div>
+</div>

@@ -1,0 +1,43 @@
+<header class="header">
+  <h1
+    class="header__title"
+    [routerLink]="['/hero-selection']"
+  >
+    SuperHero
+  </h1>
+  <div class="header__auth" *ngIf="!auth.getToken()" >
+    <button
+      class="header__auth-btn"
+      routerLinkActive="selected"
+      [routerLink]="['/login']"
+    >
+      Sign in
+    </button>
+    <button
+      routerLinkActive="selected"
+      class="header__auth-btn"
+      [routerLink]="['/registration']"
+    >
+      Create Account
+    </button>
+  </div>
+  <div class="header__auth" *ngIf="auth.getToken()">
+    <button
+      class="header__auth-btn fight"
+      [routerLink]="['/fight']"
+      [disabled]="!storageService.selectedHeroesList.length"
+    >
+      Fight
+    </button>
+    <button class="header__auth-btn"
+    [routerLink]="['/profile']">User info</button>
+    <button
+      class="header__auth-btn"
+      (click)="auth.logout()"
+    >
+      Log Out
+    </button>
+  </div>
+</header>
+
+<router-outlet></router-outlet>

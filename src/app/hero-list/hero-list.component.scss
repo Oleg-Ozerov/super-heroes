@@ -1,0 +1,13 @@
+.list {
+  display: flex;
+  justify-content: center;
+}
+
+.heroList {
+  width: 500px;
+
+  &__hero {
+    position: relative;
+    height: 230px;
+  }
+}

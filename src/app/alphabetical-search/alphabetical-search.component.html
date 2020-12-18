@@ -1,0 +1,6 @@
+<div class="alphabet">
+  <button class="btn" (click)="toggleList()">{{currentLetter}}</button>
+  <ul *ngIf="isVisible">
+    <li class="btn selector" *ngFor="let letter of alphabet" (click)="setFindRequest(letter); toggleList()">{{letter}}</li>
+  </ul>
+</div>

@@ -1,0 +1,13 @@
+<div class="container">
+  <form class="card" [formGroup]="form" (ngSubmit)="submit()">
+    <input type="text" placeholder="Hero name" formControlName="name" [value]="currentValue">
+  </form>
+  <app-alphabetical-search (selectLetterEvent)="findHeroes($event)"></app-alphabetical-search>
+</div>
+<ul class="recentSearches">
+  <li class="btn" *ngFor="let request of recentSearches" (click)="findHeroes(request)">
+    {{request}}
+  </li>
+</ul>
+
+<app-hero-list [responseList]="responseList"></app-hero-list>
