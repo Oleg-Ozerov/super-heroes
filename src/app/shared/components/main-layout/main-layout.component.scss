@@ -1,0 +1,41 @@
+.header {
+  position: relative;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333333;
+  color: #fff;
+
+  &__title {
+    padding-left: 60px;
+  }
+
+  &__auth {
+
+    &-btn {
+      cursor: pointer;
+      padding: 0 20px;
+      font-size: 20px;
+      border: none;
+      outline: none;
+      background-color: #333333;
+      color: #fff;
+      height: 60px;
+
+      &:hover {
+        background-color: #666666;
+      }
+    }
+  }
+}
+
+.selected {
+  background-color: #666666;
+}
+
+.fight {
+  position: absolute;
+  right: 50%;
+}
+

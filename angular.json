@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "SuperHero"
+  "defaultProject": "SuperHero",
+  "cli": {
+    "analytics": false
+  }
 }

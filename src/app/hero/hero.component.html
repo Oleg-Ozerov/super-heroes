@@ -1,0 +1,16 @@
+<h3 class="heroList__hero-name" (click)="heroService.id = (hero.id)" [routerLink]="['/hero-info', hero.id]">{{hero.name}}</h3>
+<img src="{{hero.image.url}}" class="heroList__hero-avatar">
+<ul class="heroList__hero-stats">
+  Stats:
+  <li>combat: {{hero.powerstats.combat}}</li>
+  <li>durability: {{hero.powerstats.durability}}</li>
+  <li>intelligence: {{hero.powerstats.intelligence}}</li>
+  <li>power: {{hero.powerstats.power}}</li>
+  <li>speed: {{hero.powerstats.speed}}</li>
+  <li>strength: {{hero.powerstats.strength}}</li>
+</ul>
+<button *ngIf="isMain;else heroList" class="heroList__hero-btn btn" (click)="selectHero()" [disabled]="isSelected">Select Hero</button>
+<ng-template #heroList>
+  <button class="heroList__hero-btn btn" (click)="pickHero()" [disabled]="hero.selected">Select Hero</button>
+  <button class="btn heroList__hero-view" (click)="heroService.id = (hero.id)" [routerLink]="['/hero-info', hero.id]">View Hero</button>
+</ng-template>

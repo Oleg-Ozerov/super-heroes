@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="card">
+    <h2>{{selectedHero.name}}</h2>
+    <img class="card__image"  src="{{selectedHero.image.url}}">
+    <ul>
+      Powerstats:
+      <br>
+      <li *ngFor="let stat of selectedHero.powerstats | keyvalue">
+        {{stat.key}}:{{stat.value}}
+      </li>
+    </ul>
+  </div>
+  <div class="card interface" *ngIf="!(loading || showResult); else fightBlock">
+    <div class="interface__startBlock">
+      <h4>{{selectedHero.name}}</h4>
+      <button class="btn" (click)="fight()">Start</button>
+      <h4>{{enemyHero.name}}</h4>
+    </div>
+    <div>
+      <h3>Powerups</h3>
+      <ul class="powerups">
+        <li class="powerups__img" *ngFor="let powerup of powerupsService.powerupList">
+          <img src="{{powerup.imageUrl}}" alt="">
+        </li>
+      </ul>
+    </div>
+  </div>
+  <ng-template #fightBlock>
+    <div class="card loader" *ngIf="loading">
+      <app-loader></app-loader>
+    </div>
+    <div *ngIf="showResult" class="card loader">
+      <p>You {{fightResult}}!</p>
+      <button class="btn" (click)="closeResult()">Close</button>
+    </div>
+  </ng-template>
+  <div class="card">
+    <h2>{{enemyHero.name}}</h2>
+    <img class="card__image"  src="{{enemyHero.image.url}}">
+    <ul>
+      Powerstats:
+      <li *ngFor="let stat of enemyHero.powerstats | keyvalue">
+        {{stat.key}}:{{stat.value}}
+      </li>
+    </ul>
+  </div>
+</div>

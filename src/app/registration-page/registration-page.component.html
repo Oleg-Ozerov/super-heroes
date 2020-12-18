@@ -1,0 +1,49 @@
+<div class="container">
+  <form class="card" [formGroup]="form" (ngSubmit)="submit()">
+    <div class="form-control">
+      <label>Login</label>
+      <input type="text" placeholder="Login" formControlName="login">
+      <div
+        *ngIf="form.get('login').invalid && form.get('login').touched"
+        class="validation"
+      >
+        <small>
+          Wrong login
+        </small>
+      </div>
+    </div>
+
+    <div class="form-control">
+      <label>Email</label>
+      <input type="text" placeholder="Email" formControlName="email">
+      <div
+        *ngIf="form.get('email').invalid && form.get('email').touched"
+        class="validation"
+      >
+        <small>
+          Wrong email
+        </small>
+      </div>
+    </div>
+
+    <div class="form-control">
+      <label>Password</label>
+      <input type="password" placeholder="Password" formControlName="password">
+      <div
+        class="validation"
+        *ngIf="form.get('password').invalid && form.get('password').touched"
+      >
+        <small>
+          Password should contain at least one uppercase letter, one number, one special symbol ($%.&!). Password should be at least 5 characters length.
+        </small>
+      </div>
+    </div>
+
+    <div class="validation" *ngIf="duplicatedUser">
+      <small>
+        This email already taken
+      </small>
+    </div>
+    <button type="submit" class="btn" [disabled]="form.invalid">Create</button>
+  </form>
+</div>

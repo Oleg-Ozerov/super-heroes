@@ -1,0 +1,28 @@
+<div>
+  <table class="historyTable">
+    <thead>
+      <tr>
+        <th class="historyTable__item" (click)="sortBy('date')">
+          Date
+        </th>
+        <th class="historyTable__item" (click)="sortBy('heroName')">
+          Name
+        </th>
+        <th class="historyTable__item" (click)="sortBy('enemyName')">
+          Opponent
+        </th>
+        <th class="historyTable__item" (click)="sortBy('result')">
+          Result
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let battle of battleHistory">
+        <td class="historyTable__item">{{battle.date | date: 'medium'}}</td>
+        <td class="historyTable__item">{{battle.heroName}}</td>
+        <td class="historyTable__item">{{battle.enemyName}}</td>
+        <td class="historyTable__item">{{battle.result}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

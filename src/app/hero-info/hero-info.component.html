@@ -1,0 +1,24 @@
+<div class="hero">
+  <img class="hero__img" src="{{hero.image.url}}" alt="">
+  <div class="hero__content">
+    <h2 class="hero__name">{{hero.name}}</h2>
+    <div>
+      <h3>Biography</h3>
+      <p *ngFor="let item of hero.biography | keyvalue">
+        {{item.key}}:{{item.value}}
+      </p>
+    </div>
+    <div>
+      <h3>Appearance</h3>
+      <p *ngFor="let item of hero.appearance | keyvalue">
+        {{item.key}}:{{item.value}}
+      </p>
+    </div>
+    <div>
+      <h3>Powerstats</h3>
+      <p *ngFor="let item of hero.powerstats | keyvalue">
+        {{item.key}}:{{item.value}}
+      </p>
+    </div>
+  </div>
+</div>

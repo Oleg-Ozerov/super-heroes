@@ -1,0 +1,25 @@
+.selectLetter {
+  border-radius: 100%;
+  background-color: #333333;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  margin-left: -100px;
+  color: white;
+}
+
+.card {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  width: 500px
+}
+
+.btn {
+  margin-top: 5px;
+}
+
+.recentSearches {
+  margin: 0 auto;
+  width: 500px;
+}
